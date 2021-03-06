@@ -1,0 +1,36 @@
+<h2>Houses</h2>
+
+<form action="">
+    <div class="form-group">
+        <label id="new-house">House type: </label>
+        <input for="new-house" #houseHouse_type />
+    </div>
+    <div class="form-group">
+        <label id="new-house">Seller: </label>
+        <input for="new-house" #houseSeller />
+    </div>
+    <div class="form-group">
+        <label id="new-house">price: </label>
+        <input for="new-house" #housePrice />
+    </div>
+    <button class="add-button" (click)="add(houseHouse_type.value, houseSeller.value, 
+    housePrice.value); houseHouse_type.value=''; houseSeller.value='';
+    housePrice.value=''">
+    Add house
+    </button>
+
+</form>
+
+<ul class="houses">
+    <li *ngFor='let house of houses'>
+        <a routerLink="/houses/{{house.id}}">
+            <span class="badge">{{house.id}} </span>{{house.seller}}
+        </a>
+        <button class="delete" title="delete house" 
+        (click)="delete(house)">
+            x
+        </button>
+
+    </li>
+
+</ul>

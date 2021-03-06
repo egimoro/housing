@@ -1,0 +1,18 @@
+<div *ngIf="house">
+    <h2>{{ house.seller | uppercase }} Details</h2>
+    <div>
+        <label for="house-house_type">House type:</label>
+        <input id="house-house_type" [(ngModel)]="house.house_type" placeholder="House type" />
+    </div>
+    <div>
+        <label for="house-seller">Seller:</label>
+        <input id="house-seller" [(ngModel)]="house.seller" placeholder="Seller" />
+    </div>
+    <div>
+        <label for="house-price">Price:</label>
+        <input id="house-price" [(ngModel)]="house.price" placeholder="Price" />
+    </div>
+    <button (click)="goBack()">go back</button>
+    <button (click)="save()">save</button>
+
+</div>
